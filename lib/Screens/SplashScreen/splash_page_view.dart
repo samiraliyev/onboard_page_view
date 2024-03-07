@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:onboard_page/Constants/Strings/app_strings.dart';
-
 import '../OnboardPage/onboard_page.dart';
 
 class SplashPageView extends StatefulWidget {
@@ -29,9 +28,14 @@ class _SplashPageViewState extends State<SplashPageView> {
     return SafeArea(
       child: Scaffold(
         body: Stack(children: [
-          Image.asset(
-            AppString.splashImage,
-            fit: BoxFit.cover,
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              fit: BoxFit.cover,
+              image: AssetImage(AppString.splashImage),
+            )),
           ),
           Positioned(
             top: 0,
